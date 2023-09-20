@@ -31,7 +31,7 @@ module.exports = {
       },
       task_priority: {
         type: Sequelize.ENUM('Low', 'Medium', 'High'),
-        allowNull: false
+        allowNull: true
       },
       createdAt: {
         allowNull: false,

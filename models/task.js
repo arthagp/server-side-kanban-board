@@ -23,11 +23,12 @@ module.exports = (sequelize, DataTypes) => {
     task_description: DataTypes.TEXT,
     task_status: {
       type: DataTypes.ENUM('To Do', 'In Progress', 'Done'),
+      defaultValue: 'To Do',
       allowNull: false
     },
     task_priority: {
-      type: DataTypes.ENUM('Low', 'Medium', 'High'), 
-      allowNull: false
+      type: DataTypes.ENUM('Low', 'Medium', 'High'),
+      allowNull: true
     }
   }, {
     sequelize,
