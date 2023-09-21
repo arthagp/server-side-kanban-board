@@ -6,6 +6,7 @@ const authentication = require('../middlewares/authentication')
 router.get('/tasks/:boardId', authentication, TaskController.getTasks)
 router.post('/task', authentication, TaskController.createTask)
 router.put('/task/:taskId', authentication, TaskController.updateTask)
+router.put('/tasks/move', authentication, TaskController.moveTask)
 router.delete('/task/:taskId', authentication, TaskController.deleteTask)
 
 module.exports = router;
