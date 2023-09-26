@@ -20,7 +20,9 @@ class BoardController {
             const { id } = req.userLogged;
             const boards = await Board.findAll({
                 where: { user_id: id },
-                include: Task // Ini akan menggabungkan tugas-tugas yang terkait dengan setiap papan
+                // Ini akan menggabungkan tugas-tugas yang terkait dengan setiap papan
+                include: Task,
+                order: [['id', 'ASC']]
             });
 
             if (boards) {

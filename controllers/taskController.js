@@ -78,7 +78,6 @@ class TaskController {
 
   static async moveTask(req, res) {
     try {
-      // const {id} = req.userLogged
       const { taskId, targetBoardId } = req.body;
       
       // Cari tugas berdasarkan taskId
@@ -87,14 +86,6 @@ class TaskController {
       if (!task) {
         return res.status(404).json({ error: 'Task not found' });
       }
-  
-      // Validasi bahwa pengguna memiliki hak akses ke tugas dan target board
-      // const userHasAccessToTask = id
-      // const userHasAccessToTargetBoard = id
-  
-      // if (!userHasAccessToTask || !userHasAccessToTargetBoard) {
-      //   return res.status(403).json({ error: 'Access denied' });
-      // }
   
       // Lakukan perpindahan tugas ke target board
       task.board_id = targetBoardId;
